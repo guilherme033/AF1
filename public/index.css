@@ -1,0 +1,18 @@
+#top{
+    height: 48px;
+}
+
+#menu-left{
+    width: 256px;
+    height: calc(100vh - 98px);
+}
+
+#footer{
+    height: 50px;
+}
+
+#body{
+    width: calc(100% - 256px);
+
+    background: whitesmoke;
+} 

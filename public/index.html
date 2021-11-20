@@ -1,17 +1,122 @@
 <!DOCTYPE html>
-<html lang="">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title><%= htmlWebpackPlugin.options.title %></title>
-  </head>
-  <body>
-    <noscript>
-      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-    </noscript>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
-  </body>
-</html>
+    <html>
+        <head>
+            <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+            <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
+            <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+            <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+
+            <link rel="stylesheet" type="text/css" href="index.css" />
+        </head>
+
+        <body>
+            <div id="app">
+                <v-app>
+                    <v-header>
+                        <div id="top">
+                            <v-app-bar color="grey darken-4
+							" dense dark>
+                                <v-app-bar-nav-icon></v-app-bar-nav-icon>
+                                <v-toolbar-title>Test Template</v-toolbar-title>
+
+                                <v-spacer></v-spacer>
+
+                                <v-btn icon>
+                                    <v-icon>mdi-heart</v-icon>
+                                </v-btn>
+                                <v-btn icon>
+                                    <v-icon>mdi-magnify</v-icon>
+                                </v-btn>
+                        
+                                <v-menu left bottom>
+                                    <template v-slot:activator="{ on, attrs }">
+                                        <v-btn icon v-bind="attrs" v-on="on">
+                                            <v-icon>mdi-dots-vertical</v-icon>
+                                        </v-btn>
+                                    </template>
+                        
+                                    <v-list>
+                                        <v-list-item v-for="n in 5" :key="n" @click="() => {}">
+                                            <v-list-item-title>Opção {{ n }}</v-list-item-title>
+                                        </v-list-item>
+                                    </v-list>
+                                </v-menu>
+                            </v-app-bar>
+                        </div>
+                    </v-header>
+
+					
+                    
+                    <v-main>
+                        <v-row class="mt-0">
+                            <v-card id="menu-left">
+                                <v-navigation-drawer class="grey darken-4
+								" dark permanent>
+                                    <v-list>
+                                        <v-list-item link>
+                                            <v-list-item-icon>
+                                                <v-icon>mdi-view-dashboard</v-icon>
+                                            </v-list-item-icon>
+                                
+                                            <v-list-item-content>
+                                                <v-list-item-title>Item 1</v-list-item-title>
+                                            </v-list-item-content>
+                                        </v-list-item>
+                                        <v-list-item link>
+                                            <v-list-item-icon>
+                                                <v-icon>mdi-account-box</v-icon>
+                                            </v-list-item-icon>
+                                
+                                            <v-list-item-content>
+                                                <v-list-item-title>Item 2</v-list-item-title>
+                                            </v-list-item-content>
+                                        </v-list-item>
+                                        <v-list-item link>
+                                            <v-list-item-icon>
+                                                <v-icon>mdi-gavel</v-icon>
+                                            </v-list-item-icon>
+                                
+                                            <v-list-item-content>
+                                                <v-list-item-title>Item 3</v-list-item-title>
+                                            </v-list-item-content>
+                                        </v-list-item>
+                                    </v-list>
+                                </v-navigation-drawer>
+                            </v-card>
+                            <div id="body">
+                                
+								<v-card class="mx-auto elevation-500 mt-7" color="black" dark style="max-width: 400px;">
+                                    <v-row justify="space-between">
+                                        <v-img 
+										  height="800px"
+										  src="https://observatoriodocinema.uol.com.br/wp-content/uploads/2021/07/dragon-ball-super-1200x900-1.jpg"></v-img>
+                                    </v-row>
+                                    <v-divider dark></v-divider>
+                                </v-card>
+                            </div>
+                        </v-row>
+                    </v-main>
+                    <v-footer dark padless>
+                        <v-card id="footer" class="flex" flat tile color="grey darken-4
+						">
+                            <v-card-text class="py-2 white--text text-center">
+                                <strong>2021</strong>
+                            </v-card-text>
+                        </v-card>
+                    </v-footer>
+                </v-app>
+            </div>
+			
+
+            <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+            <script>
+                new Vue({
+                el: '#app',
+                vuetify: new Vuetify(),
+                })
+            </script>
+        </body>
+    </html>
+
+	
